@@ -33,6 +33,6 @@ func (j *Job) Start() {
 	go j.cron.Start()
 }
 
-func (j *Job) Unlock() error {
+func (j *Job) Done() error {
 	return j.adapter.Unlock()
 }
