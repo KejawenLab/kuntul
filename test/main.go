@@ -6,8 +6,8 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/crowdeco/kuntul"
-	"github.com/crowdeco/kuntul/adapters"
+	"github.com/KejawenLab/kuntul"
+	"github.com/KejawenLab/kuntul/adapters"
 )
 
 func main() {

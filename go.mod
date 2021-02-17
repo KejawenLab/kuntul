@@ -1,4 +1,4 @@
-module github.com/crowdeco/kuntul
+module github.com/KejawenLab/kuntul
 
 go 1.14
 
