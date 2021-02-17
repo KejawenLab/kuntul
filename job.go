@@ -1,13 +1,29 @@
 package kuntul
 
 import (
+	"time"
+
 	"github.com/robfig/cron/v3"
 )
 
-type Job struct {
-	adapter Adapter
-	cron    *cron.Cron
-}
+type (
+	Adapter interface {
+		Lock(task *Task) error
+		Unlock() error
+	}
+
+	Task struct {
+		ID         string
+		Cmd        func(job *Job)
+		Estimation time.Duration
+		Schedule   string
+	}
+
+	Job struct {
+		adapter Adapter
+		cron    *cron.Cron
+	}
+)
 
 func NewJob(adapter Adapter) *Job {
 	return &Job{
