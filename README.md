@@ -22,6 +22,8 @@ func main() {
 		ID: "abc",
 		Cmd: func(job *kuntul.Job) {
 			fmt.Println(time.Now().Clock())
+
+			job.Unlock()
 		},
 		Schedule:   "* * * * * *",
 		Estimation: 3 * time.Second,
